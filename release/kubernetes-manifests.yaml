@@ -238,8 +238,8 @@ spec:
             value: "checkoutservice:5050"
           - name: AD_SERVICE_ADDR
             value: "adservice:9555"
-          # - name: JAEGER_SERVICE_ADDR
-          #   value: "jaeger-collector:14268"
+          - name: JAEGER_SERVICE_ADDR
+            value: "jaeger-collector:14268"
           resources:
             requests:
               cpu: 100m
@@ -351,9 +351,9 @@ spec:
         livenessProbe:
           exec:
             command: ["/bin/grpc_health_probe", "-addr=:3550"]
-#        env:
-#          - name: JAEGER_SERVICE_ADDR
-#            value: "jaeger-collector:14268"
+        env:
+        - name: JAEGER_SERVICE_ADDR
+          value: "jaeger-collector:14268"
         resources:
           requests:
             cpu: 100m
@@ -651,8 +651,8 @@ spec:
         env:
         - name: PORT
           value: "9555"
-        #- name: JAEGER_SERVICE_ADDR
-        #  value: "jaeger-collector:14268"
+        - name: JAEGER_SERVICE_ADDR
+          value: "jaeger-collector:14268"
         resources:
           requests:
             cpu: 200m
